@@ -1,0 +1,142 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d802e00, pid=2704, tid=168
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_09-b03 mixed mode)
+# Problematic frame:
+# V  [jvm.dll+0xd2e00]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00ad5c10):  VMThread [id=168]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x6e6f6977
+
+Registers:
+EAX=0x6e6f6963, EBX=0x06c84790, ECX=0x06c841ab, EDX=0x06c846e0
+ESP=0x0ab5f8c4, EBP=0x0ab5f8cc, ESI=0x06c841ab, EDI=0x06c841ab
+EIP=0x6d802e00, EFLAGS=0x00010282
+
+Top of Stack: (sp=0x0ab5f8c4)
+0x0ab5f8c4:   0ab5f9cc 06c841ab 0ab5f914 6d73d5f3
+0x0ab5f8d4:   a554e5ec 0ab5f8fc 6d77666c 06c84790
+0x0ab5f8e4:   00000000 0ab5f9cc 0ab5f9c4 000000b0
+0x0ab5f8f4:   6d7a0e55 00000000 00ad6140 00000000
+0x0ab5f904:   00000000 0000016e 0ab5f9c4 6d7a30fe
+0x0ab5f914:   0ab5f988 6d7a314a 00ad6140 0ab5f9c4
+0x0ab5f924:   00ad5c10 00000000 00000001 00000001
+0x0ab5f934:   0ab5f970 00000000 00000000 6d7a1acf 
+
+Instructions: (pc=0x6d802e00)
+0x6d802df0:   0c 6a 01 58 5e c3 55 8b ec 56 57 8b f9 8b 47 0c
+0x6d802e00:   8b 40 14 8b b0 04 01 00 00 85 f6 74 1d 8b 45 08 
+
+
+Stack: [0x0ab20000,0x0ab60000),  sp=0x0ab5f8c4,  free space=254k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xd2e00]
+V  [jvm.dll+0xd5f3]
+V  [jvm.dll+0x7314a]
+V  [jvm.dll+0xd9cb6]
+V  [jvm.dll+0xd9fe3]
+V  [jvm.dll+0xda310]
+V  [jvm.dll+0x79557]
+V  [jvm.dll+0x6d360]
+V  [jvm.dll+0x11037f]
+V  [jvm.dll+0x111a55]
+V  [jvm.dll+0x70ca3]
+V  [jvm.dll+0x70879]
+V  [jvm.dll+0x73ebb]
+V  [jvm.dll+0x10dc75]
+V  [jvm.dll+0x6f5df]
+V  [jvm.dll+0x51c2e]
+V  [jvm.dll+0x6f781]
+V  [jvm.dll+0x128a8b]
+V  [jvm.dll+0x128559]
+V  [jvm.dll+0x128702]
+V  [jvm.dll+0x128467]
+C  [MSVCRT.dll+0x2a3b0]
+C  [kernel32.dll+0xb683]
+
+VM_Operation (0x0007f5cc): generation collection for allocation, mode: safepoint, requested by thread 0x00036860
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00aef898 JavaThread "
+[error occurred during error reporting, step 170, id 0xc0000005]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00035ef8/0x00004718] Threads_lock - owner thread: 0x00ad5c10
+[0x00036078/0x000046dc] Heap_lock - owner thread: 0x00036860
+
+Heap
+ def new generation   total 576K, used 64K [0x02b20000, 0x02bc0000, 0x03000000)
+  eden space 512K,   0% used [0x02b20000, 0x02b20000, 0x02ba0000)
+  from space 64K, 100% used [0x02bb0000, 0x02bc0000, 0x02bc0000)
+  to   space 64K,   0% used [0x02ba0000, 0x02ba0000, 0x02bb0000)
+ tenured generation   total 2588K, used 2529K [0x03000000, 0x03287000, 0x06b20000)
+   the space 2588K,  97% used [0x03000000, 0x032787d8, 0x03162400, 0x03287000)
+ compacting perm gen  total 8192K, used 3805K [0x06b20000, 0x07320000, 0x0ab20000)
+   the space 8192K,  46% used [0x06b20000, 0x06ed7668, 0x06ed4c00, 0x07320000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x0040d000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\java.exe
+0x7c910000 - 0x7c9c6000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c902000 	C:\WINDOWS\system32\kernel32.dll
+0x77da0000 - 0x77e4c000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e50000 - 0x77ee1000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77be0000 - 0x77c38000 	C:\WINDOWS\system32\MSVCRT.dll
+0x6d730000 - 0x6d8cb000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\client\jvm.dll
+0x7e390000 - 0x7e420000 	C:\WINDOWS\system32\USER32.dll
+0x77ef0000 - 0x77f38000 	C:\WINDOWS\system32\GDI32.dll
+0x76b00000 - 0x76b2e000 	C:\WINDOWS\system32\WINMM.dll
+0x76340000 - 0x7635d000 	C:\WINDOWS\system32\IMM32.DLL
+0x6bd00000 - 0x6bd0d000 	C:\WINDOWS\system32\SYNCOR11.DLL
+0x6d2f0000 - 0x6d2f8000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\hpi.dll
+0x76bb0000 - 0x76bbb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d3f0000 - 0x6d425000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\jdwp.dll
+0x6d700000 - 0x6d70c000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\verify.dll
+0x6d370000 - 0x6d38d000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\java.dll
+0x6d720000 - 0x6d72f000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\zip.dll
+0x6d290000 - 0x6d297000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\dt_socket.dll
+0x71a30000 - 0x71a47000 	C:\WINDOWS\system32\WS2_32.dll
+0x71a20000 - 0x71a28000 	C:\WINDOWS\system32\WS2HELP.dll
+0x719d0000 - 0x71a10000 	C:\WINDOWS\System32\mswsock.dll
+0x76ee0000 - 0x76f07000 	C:\WINDOWS\system32\DNSAPI.dll
+0x76f70000 - 0x76f78000 	C:\WINDOWS\System32\winrnr.dll
+0x76f20000 - 0x76f4d000 	C:\WINDOWS\system32\WLDAP32.dll
+0x76f80000 - 0x76f86000 	C:\WINDOWS\system32\rasadhlp.dll
+0x66740000 - 0x66799000 	C:\WINDOWS\system32\hnetcfg.dll
+0x71a10000 - 0x71a18000 	C:\WINDOWS\System32\wshtcpip.dll
+0x6d530000 - 0x6d543000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\net.dll
+
+VM Arguments:
+jvm_args: -Xdebug -Xrunjdwp:transport=dt_socket,address=localhost:2935
+java_command: herramientas.numeraPretasacion
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\orant\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS;C:\WINDOWS\SYSTEM32\WBEM;C:\PROGRA~1\CHECKP~1\CPSHARED\NG\BIN;C:\PROGRA~1\CHECKP~1\CPSHARED\NG\LIB
+USERNAME=Administrador
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 15 Model 4 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 2
+
+CPU:total 2 (cores per cpu 1, threads per core 2) family 15 model 4 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ht
+
+Memory: 4k page, physical 1826236k(644728k free), swap 2448964k(1112224k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.5.0_09-b03) for windows-x86, built on Oct 12 2006 01:20:10 by "java_re" with MS VC++ 6.0
+
